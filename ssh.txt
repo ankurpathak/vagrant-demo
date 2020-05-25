@@ -1,0 +1,22 @@
+//current machine
+ssh-keygen -t rsa -b 4096
+sshpass -p password scp /home/ssguser/.ssh/id_rsa.pub root@172.16.167.131:/root
+
+ssh root@172.16.167.131
+
+//remote machine(home directory)
+mkdir .ssh
+cat id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 700 .ssh/
+chmod 600 .ssh/*
+
+---------------------------------------------
+//current machine
+ssh-keygen -t rsa -b 4096
+ssh-copy-id root@172.16.167.131
+//add keys to ssh-add
+ssh-add -l
+ssh-add -L
+ssh-add -D
+//remote machine
+use the terminal
