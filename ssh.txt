@@ -20,3 +20,5 @@ ssh-add -L
 ssh-add -D
 //remote machine
 use the terminal
+
+ssh-keygen -t rsa -b 4096 -m PEM -f file.pem
